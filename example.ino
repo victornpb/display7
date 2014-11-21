@@ -57,7 +57,7 @@ void display7Setup(const uint8_t displayPins[]){
 void display7(const uint8_t displayPins[], byte bitmap){
   if (C_ANODE) { bitmap = ~bitmap; }
   for (uint8_t i=0; i<8; ++i) {
-    digitalWrite(displayPins[i], (bitmap & 0x1)?HIGH:LOW);
+    digitalWrite(displayPins[7-i], (bitmap & 0x1)?HIGH:LOW);
     bitmap >>= 1;
   }
 }
